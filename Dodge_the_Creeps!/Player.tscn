@@ -31,6 +31,11 @@ height = 15.9968
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "swim",
+"speed": 4.0
+}, {
 "frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "fly",
@@ -39,11 +44,6 @@ animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walk",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "swim",
 "speed": 4.0
 } ]
 
@@ -62,6 +62,7 @@ position = Vector2( -0.418121, -0.698334 )
 shape = SubResource( 2 )
 
 [node name="Mob" type="RigidBody2D" parent="."]
+position = Vector2( 104.155, 173.961 )
 collision_mask = 0
 gravity_scale = 0.0
 __meta__ = {
@@ -74,6 +75,7 @@ frames = SubResource( 3 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
+rotation = 1.5708
 
 [node name="Visibility" type="VisibilityNotifier2D" parent="Mob"]
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
